@@ -13,10 +13,14 @@ module.exports = {
         test: /\.html$/,
         use: [
             {
-                loader: 'html-loader'
+              loader: 'html-loader'
             }
         ],
-      }
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   plugins: [
