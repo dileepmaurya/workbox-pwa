@@ -1,5 +1,10 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
+
 module.exports = {
+  devServer: {
+    port: 6868
+  },
   module:{
     rules: [
       {
@@ -27,6 +32,10 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html',
+    }),
+    new WorkboxWebpackPlugin.InjectManifest({
+      swSrc: "./src/src-sw.js",
+      swDest: "sw.js"
     }),
   ],
 };
