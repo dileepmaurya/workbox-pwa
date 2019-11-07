@@ -7,4 +7,4 @@ RUN npm install
 HEALTHCHECK --interval=5s \
             --timeout=5s \
             CMD curl -f http://127.0.0.1:6868 || exit 1
-ENTRYPOINT ["npm", "run", "dev"]
+CMD ["npm", "run", "dev"]
